@@ -1,11 +1,32 @@
-<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicky Game </title>
+</head>
+<body>
+    <h1>Ta's homemade clicker</h1>
+    <p>Number Of Clicks: <span id="clicks">0</span></p>
+    <button id="incrementButton">Increase</button>
+    <button id="decrementButton">Decrease</button>
+    <button id="resetButton">Reset</button>
+    <script>
+        let clicks = 0;
 
-<html>
-  <head>
-    <title>ASH Template</title>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    
-  </body>
+        document.getElementById('incrementButton').addEventListener('click', () => {
+            clicks++;
+            document.getElementById('clicks').innerText = clicks;
+        });
+
+        document.getElementById('decrementButton').addEventListener('click', () => {
+            clicks--;
+            document.getElementById('clicks').innerText = clicks;
+        });
+
+        document.getElementById('resetButton').addEventListener('click', () => {
+            clicks = 0;
+            document.getElementById('clicks').innerText = clicks;
+        });
+    </script>
+</body>
 </html>
